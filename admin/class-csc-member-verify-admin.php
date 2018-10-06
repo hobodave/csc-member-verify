@@ -101,11 +101,11 @@ class Csc_Member_Verify_Admin {
 	}
 
 	/**
-	 * 
+	 *
 	 * @since   1.0.0
 	 */
 	public function form_response() {
-		var_dump('wut'); die;
+		//var_dump('wut'); die;
 		if (isset($_POST['csc_member_verify_nonce']) && wp_verify_nonce($_POST['csc_member_verify_nonce'], 'csc_member_verify_form_nonce')) {
 			$csc_member_text = sanitize_textarea_field($_POST['csc_member_ids']);
 			$csc_member_ids = explode("\n", $csc_member_text);
@@ -126,7 +126,7 @@ class Csc_Member_Verify_Admin {
 
 			if (isset($_POST['ajaxrequest']) && $_POST['ajaxrequest'] = 'true') {
 				echo '<pre>';
-				print_r($_POST);
+				print_r($results);
 				echo '</pre>';
 				wp_die();
 			}
