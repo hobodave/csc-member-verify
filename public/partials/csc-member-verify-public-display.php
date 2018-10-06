@@ -14,7 +14,7 @@
 ?>
 
 <!-- This file should primarily consist of HTML with a little bit of PHP. -->
-<?php //if (current_user_can('verify_members')): ?>
+<?php if (current_user_can('verify_members')): ?>
 	<?php $csc_member_verify_nonce = wp_create_nonce( 'csc_member_verify_form_nonce' ); ?>
 	<h2><?= __('Bulk Member Verification', $this->plugin_name) ?></h2>
 	<div class="csc_member_verify_form" id="csc_member_verify">
@@ -33,6 +33,6 @@
 	</div>
 	<div id="csc_notice_bar"></div>
 	<div id="csc_form_response"></div>
-<?php //else: ?>
-	<!--<p><?= __("You are not authorized to perform this operation.", $this->plugin_name); ?></p>-->
-<?php //endif ?>
+<?php else: ?>
+	<p><?= __("You are not authorized to perform this operation.", $this->plugin_name); ?></p>
+<?php endif ?>
