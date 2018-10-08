@@ -32,7 +32,11 @@
 		</form>
 	</div>
 	<div id="csc_notice_bar"></div>
-	<div id="csc_form_response"></div>
+	<div id="csc_form_response">
+		<h2>Results</h2>
+		<p>Copy paste results into your spreadsheet when ready.</p>
+		<textarea readonly cols="15" rows="15" placeholder="Results will appear here..."></textarea>
+	</div>
 <?php else: ?>
 	<p><?= __("You are not authorized to perform this operation.", $this->plugin_name); ?></p>
 <?php endif ?>

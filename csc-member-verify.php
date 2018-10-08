@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       CSC Member Verify
  * Plugin URI:        http://example.com/csc-member-verify-uri/
- * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
+ * Description:       This plugin provides a form that allows for validation of User IDs
  * Version:           1.0.0
  * Author:            David Abdemoulaie
  * Author URI:        http://example.com/
