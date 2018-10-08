@@ -8,17 +8,17 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              http://example.com
+ * @link              http://chicagosc.com
  * @since             1.0.0
  * @package           Csc_Member_Verify
  *
  * @wordpress-plugin
  * Plugin Name:       CSC Member Verify
- * Plugin URI:        http://example.com/csc-member-verify-uri/
+ * Plugin URI:        https://github.com/hobodave/csc-member-verify
  * Description:       This plugin provides a form that allows for validation of User IDs
  * Version:           1.0.0
  * Author:            David Abdemoulaie
- * Author URI:        http://example.com/
+ * Author URI:        http://chicagosc.com/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       csc-member-verify
