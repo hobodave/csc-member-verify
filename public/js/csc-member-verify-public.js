@@ -33,7 +33,7 @@
 			.always(function() {
 				console.log('CSC-MV: Resetting');
 				event.target.reset();
-				$('#csc_member_verify .spinner').removeClass('is-active');;
+				$('#csc_member_verify .spinner').removeClass('is-active');
 			});
 		});
 	});
