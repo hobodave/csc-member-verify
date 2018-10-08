@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       http://example.com
+ * @link       https://chicagosc.com
  * @since      1.0.0
  *
  * @package    Csc_Member_Verify
@@ -105,7 +105,6 @@ class Csc_Member_Verify_Admin {
 	 * @since   1.0.0
 	 */
 	public function form_response() {
-		var_dump('wut'); die;
 		if (isset($_POST['csc_member_verify_nonce']) && wp_verify_nonce($_POST['csc_member_verify_nonce'], 'csc_member_verify_form_nonce')) {
 			$csc_member_text = sanitize_textarea_field($_POST['csc_member_ids']);
 			$csc_member_ids = array_map('trim', explode("\n", $csc_member_text));
