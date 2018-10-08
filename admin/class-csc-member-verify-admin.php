@@ -115,7 +115,7 @@ class Csc_Member_Verify_Admin {
 				if ($user = get_userdata(intval($value))) {
 					$member_status = in_array('member', (array) $user->roles) ? 'OK' : 'NOT MEMBER';
 					$results[] = array($value, $user->display_name, $member_status);
-				} elseif ($user = reset(get_users(array('meta_key' => 'mepr_previous_member_id', 'meta_value' => $value, 'number' => 1, 'count_total' => false)))) {
+				} elseif ($user = reset(get_users(array('meta_key' => 'mepr_legacy_member_id', 'meta_value' => $value, 'number' => 1, 'count_total' => false)))) {
 					$member_status = in_array('member', (array) $user->roles) ? 'OK' : 'NOT MEMBER';
 					$results[] = array($value, $user->display_name, $member_status);
 				} else {
