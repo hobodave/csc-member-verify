@@ -110,22 +110,23 @@ class Csc_Member_Verify_Admin {
 			$csc_member_ids = array_map('trim', explode("\n", $csc_member_text));
 
 			$results = [];
+			$results[] = array('Provided ID', 'Name', 'Status', 'Current ID');
 
 			foreach ($csc_member_ids as $key => $value) {
 				if ($user = get_userdata(intval($value))) {
 					$member_status = in_array('member', (array) $user->roles) ? 'OK' : 'NOT MEMBER';
-					$results[] = array($value, $user->display_name, $member_status);
+					$results[] = array($value, $user->display_name, $member_status, $user->ID);
 				} elseif ($user = reset(get_users(array('meta_key' => 'mepr_legacy_member_id', 'meta_value' => $value, 'number' => 1, 'count_total' => false)))) {
 					$member_status = in_array('member', (array) $user->roles) ? 'OK' : 'NOT MEMBER';
-					$results[] = array($value, $user->display_name, $member_status);
+					$results[] = array($value, $user->display_name, $member_status, $user->ID);
 				} else {
-					$results[] = array($value, 'MEMBER NOT FOUND', 'NOT FOUND');
+					$results[] = array($value, 'ID NOT FOUND', '', '');
 				}
 			}
 
 			if (isset($_POST['ajaxrequest']) && $_POST['ajaxrequest'] = 'true') {
 				foreach ($results as $key => $row) {
-					echo "{$row[0]},{$row[1]},{$row[2]}\n";
+					echo "{$row[0]},{$row[1]},{$row[2]},{$row[3]}\n";
 				}
 				wp_die();
 			}
