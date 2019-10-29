@@ -137,6 +137,7 @@ class Csc_Member_Verify_Public {
 				'state' => $user->mepr_address_state,
 				'first_name' => $user->first_name,
 				'last_name' => $user->last_name,
+				'year_of_birth' => $user->mepr_year_of_birth,
 			);
 
 			$response = new WP_REST_Response($results);
