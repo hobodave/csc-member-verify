@@ -16,7 +16,7 @@
  * Plugin Name:       CSC Member Verify
  * Plugin URI:        https://github.com/hobodave/csc-member-verify
  * Description:       This plugin provides a form that allows for validation of User IDs
- * Version:           1.1.1
+ * Version:           1.1.2
  * Author:            David Abdemoulaie
  * Author URI:        https://chicagosc.com/
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'CSC_MEMBER_VERIFY_VERSION', '1.1.1' );
+define( 'CSC_MEMBER_VERIFY_VERSION', '1.1.2' );
 
 /**
  * The code that runs during plugin activation.

@@ -134,7 +134,7 @@ class Csc_Member_Verify_Public {
 			$results = array(
 				'member_id' => $member_id,
 				'status' => $member_status,
-				'state' => $user->mepr_address_state,
+				'state' => $user->get('mepr-address-state'),
 				'first_name' => $user->first_name,
 				'last_name' => $user->last_name,
 				'year_of_birth' => $user->mepr_year_of_birth,
