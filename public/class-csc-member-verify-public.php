@@ -108,11 +108,44 @@ class Csc_Member_Verify_Public {
 		add_shortcode('csc_member_verify_form', array($this, 'csc_member_verify_form'));
 	}
 
+	public function register_routes() {
+		$namespace = "{$this->csc_member_verify}/v1";
+
+		register_rest_route( $namespace, '/member/(?P<member_id>\d+)', array(
+			array(
+				'methods' => WP_REST_Server::READABLE,
+				'callback' => array( $this, 'get_member_data' )
+			)
+		));
+	}
+
 	public function csc_member_verify_form() {
 		ob_start();
 		require plugin_dir_path( dirname( __FILE__ ) ) . 'public/partials/csc-member-verify-public-display.php';
 
 		return ob_get_clean();
+	}
+
+	public function get_member_data( WP_REST_Request $request ) {
+		$member_id = $request['member_id'];
+
+		if ($user = get_userdata(intval($member_id))) {
+			$member_status = in_array('member', (array) $user->roles) ? 'OK' : 'EXPIRED';
+			$results = array(
+				'member_id' => $member_id,
+				'status' => $member_status,
+				'state' => $user->mepr_address_state,
+				'first_name' => $user->first_name,
+				'last_name' => $user->last_name,
+			);
+
+			$response = new WP_REST_Response($results);
+			$response->set_status(200);
+
+			return $response;
+		} else {
+			return new WP_Error( 'member_not_found', 'There is no member with this ID', array('status' => 404));
+		}
 	}
 
 }
